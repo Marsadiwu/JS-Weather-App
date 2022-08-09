@@ -74,6 +74,8 @@ strong {
 #celsius-link,
 #fahrenheit-link {
   text-decoration: none;
+  color: rgb(100, 100, 107);
+  cursor: default;
 }
 
 .active {
