@@ -23,7 +23,6 @@ function formatDate(currentMilliseconds) {
 }
 
 function showCurrentData(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#date");
 
@@ -66,8 +65,6 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let celsiusTemperature = null;
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
@@ -86,6 +83,7 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
