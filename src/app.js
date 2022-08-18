@@ -93,7 +93,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function getForecast(coordinates) {
   let apiKey = "9bfa0003d71528a0ff8320e51ac65a12";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -102,7 +102,7 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecast">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -115,10 +115,10 @@ function displayForecast(response) {
                 <div class="forecast-temp">
                   <span id="forecast-max">${Math.round(
                     forecastDay.temp.max
-                  )}</span> °|
+                  )}</span>°|
                   <span id="forecast-min">${Math.round(
                     forecastDay.temp.min
-                  )} </span> °
+                  )} </span>°
                 </div>
               </div>`;
     }
@@ -132,7 +132,7 @@ function formatWeekday(currentMilliseconds) {
   let date = new Date(currentMilliseconds * 1000);
   let day = date.getDay();
   let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  return days[day] + 1;
+  return days[day];
 }
 
 search("Berlin");

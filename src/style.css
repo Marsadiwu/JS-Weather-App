@@ -16,7 +16,7 @@
   color: rgb(244, 244, 248);
   font-size: 17px;
   letter-spacing: 3px;
-  background-color: rgb(197, 82, 28);
+  background-color: rgb(236, 110, 76);
   border: none;
   border-radius: 7px;
   box-shadow: 2px 2px 5px rgb(152, 152, 234);
@@ -97,6 +97,27 @@ ul {
   padding: 0 0;
   position: relative;
   top: 33px;
+}
+
+.row.forecast {
+  margin-left: 10px;
+}
+#forecast-day {
+  color: rgb(100, 100, 107);
+  font-weight: bold;
+  font-size: 15px;
+}
+#forecast-icon {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  left: -10px;
+}
+.forecast-temp {
+  font-size: 10px;
+}
+#forecast-max {
+  font-weight: bold;
 }
 
 small {
